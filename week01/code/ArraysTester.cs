@@ -70,11 +70,12 @@ public static class ArraysTester {
 
         // Move the last amount elements from the end of the first list to the temporary list
         rotatedElements.AddRange(data.GetRange(data.Count - amount, amount));
-
+        
+        // Move the remaining elements in the first listto the right by the given amount.
         for (int i = data.Count -amount -1; i >= 0; i--){
             data[i + amount] = data[i];
         }
-
+        // Move elements from the temp list to the front of the original one
         for (int i = 0; i < amount; i++){
             data[i] = rotatedElements[i];
         }
